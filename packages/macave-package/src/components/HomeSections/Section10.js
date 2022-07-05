@@ -68,7 +68,7 @@ const Section10 = ({state}) => {
                 }
                 </Items>
                 <Advertisement>
-                   <Slot name = '/21802911858/Anuncios-AdSense-SeUno-300x600' />
+                   <Slot name = '/21802911858/Anuncios-AdSense-SeUno-Flexible' />
                 </Advertisement>
             </CardContainerWrap10>
         </CardContainer10>

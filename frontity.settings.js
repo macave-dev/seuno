@@ -34,6 +34,15 @@ export default [
                   size: [300, 600],
                 },
               },
+              sidebar2: {
+                slot: "/21802911858/Anuncios-AdSense-SeUno-Flexible",
+                library: "googleAdManager.GooglePublisherTag",
+                props: {
+                  id: "div-gpt-ad-1657054524427-0",
+                  unit: "/21802911858/Anuncios-AdSense-SeUno-Flexible",
+                  size: ['fluid'],
+                },
+              },
             },
           },
         },
