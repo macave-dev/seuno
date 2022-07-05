@@ -117,7 +117,7 @@ const Post = ({state, link, libraries,actions}) => {
           <title data-rh="true">{decode(post.title.rendered)}</title>
 
 
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
 
          </Head>
          <SharePostBar props = {windowState} />
@@ -155,14 +155,14 @@ const Post = ({state, link, libraries,actions}) => {
               </LeftSide>
               <RightSide>
                 <Advertisement>
-                <AdSense.Google
+                {/* <AdSense.Google
                   client='ca-pub-1507048971343506'
                   slot='7589976484'
                   style={{ display: 'block' }}
                   format='auto'
                   responsive='true'
                   layoutKey='-gw-1+2a-9x+5c'
-                />
+                /> */}
                 </Advertisement>
                 <Advertisement>
                   <Slot/>
