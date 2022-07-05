@@ -34,7 +34,7 @@ export default [
         name: "@frontity/google-tag-manager-analytics",
         state: {
           googleTagManagerAnalytics: {
-            containerIds: ["GTM-K8LHWLT", ""],
+            containerId: "GTM-K8LHWLT",
           },
         },
       },
