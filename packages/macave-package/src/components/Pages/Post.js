@@ -10,7 +10,7 @@ import { Head } from 'frontity';
 import Loading from '../Loading'
 
 
-import AdSense from 'react-adsense';
+// import AdSense from 'react-adsense';
 
 
 
