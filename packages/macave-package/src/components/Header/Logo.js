@@ -8,7 +8,7 @@ const Logo = ({state}) => {
 
     const data = state.source.get(state.router.link)
     
-    const url = 'https://eventosyfestivales.com/wp-json/wp-macave/v1/schema';
+    const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/schema';
     const [information,setInformation] = useState()
     const fetchApi = async() => {
         const response = await fetch(url);

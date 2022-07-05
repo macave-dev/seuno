@@ -9,7 +9,7 @@ import Loading from '../Loading';
 const Section1 = ({state,styled,propsAPI,actions}) => {
 
 
-    const url = 'https://eventosyfestivales.com/wp-json/wp-macave/v1/home';
+    const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/home';
     const [hasDataLoaded,setSelectedCard] = useState();
     const [information,setInformation] = useState();
     const ref = useRef();

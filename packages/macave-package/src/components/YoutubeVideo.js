@@ -5,7 +5,7 @@ import HeaderSection from './HeaderSection';
 const YoutubeVideo = ({state}) => {
 
 
-    const url = 'https://eventosyfestivales.com/wp-json/wp-macave/v1/home'
+    const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/home'
     const [information,setInformation] = useState()
     const fetchApi = async() => {
         const response = await fetch(url);

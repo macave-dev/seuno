@@ -7,7 +7,7 @@ const SubMenuFooter = ({state}) => {
 
     
 
-    const url = 'https://eventosyfestivales.com/wp-json/wp-macave/v1/footer';
+    const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/footer';
     const [information,setInformation] = useState();
     const [columnsClass,setClass] = useState();
     const ref = useRef();

@@ -30,15 +30,13 @@ const Section9 = ({state,styled}) => {
 
     const data = state.source.get(state.router.link)
 
-    const url = 'https://eventosyfestivales.com/wp-json/wp-macave/v1/home'
+    const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/home'
     
     const [information,setInformation] = useState()
     const fetchApi = async() => {
         const response = await fetch(url)
         const responseJSON = await response.json()
         setInformation(responseJSON)
-        
-        
     }
 
     useEffect(() => {

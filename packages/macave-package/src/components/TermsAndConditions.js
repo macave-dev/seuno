@@ -4,7 +4,7 @@ import { connect, styled } from 'frontity';
 const TermsAndCondtions = ({state,libraries}) => {
 
 
-    const url = 'https://eventosyfestivales.com/wp-json/wp/v2/pages'
+    const url = 'https://seunonoticias.net/wp-json/wp/v2/pages'
     const [information,setInformation] = useState()
     const fetchApi = async() => {
         const response = await fetch(url)

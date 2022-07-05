@@ -31,7 +31,7 @@ const Menu = ({ state, actions }) => {
     }
 
     
-    const url = 'https://eventosyfestivales.com/wp-json/wp-macave/v1/secondary';
+    const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/secondary';
     const [information,setInformation] = useState()
     const fetchApi = async() => {
         const response = await fetch(url);
