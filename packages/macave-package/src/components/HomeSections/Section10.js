@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react';
-import { connect,styled, decode } from 'frontity';
+import { connect,styled, decode, Slot } from 'frontity';
 import Link from '@frontity/components/link';
 import dayjs from 'dayjs'
 import GoToIcon from '../svgIcons/goToIcon';
@@ -68,8 +68,7 @@ const Section10 = ({state}) => {
                 }
                 </Items>
                 <Advertisement>
-                    {/* <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
-                    <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/> */}
+                   <Slot name = '/21802911858/Anuncios-AdSense-SeUno-300x600' />
                 </Advertisement>
             </CardContainerWrap10>
         </CardContainer10>

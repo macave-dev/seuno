@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react';
-import { connect,styled, decode } from 'frontity';
+import { connect,styled, decode, Slot } from 'frontity';
 import Link from '@frontity/components/link';
 import HeaderSection from '../HeaderSection';
 import dayjs from 'dayjs'
@@ -71,10 +71,7 @@ const Section8 = ({state}) => {
                 }
                 </Items>
                 <Advertisement>
-                    {/* <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
-                    <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
-                    <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
-                    <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/> */}
+                <Slot name = '/21802911858/Anuncios-AdSense-SeUno-300x600' />
                 </Advertisement>
             </CardContainerWrap8>
         </CardContainer8>
