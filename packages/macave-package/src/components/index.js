@@ -83,6 +83,9 @@ const Root = ({state,actions}) => {
 
 <script async src="//cmp.optad360.io/items/efcbca1a-ff07-4c07-8ab7-4b8f22babc58.min.js"></script>
 <script async src="//get.optad360.io/sf/2a85e80b-6283-412a-9072-fb28e85f51ee/plugin.min.js"></script>
+        
+          
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         </Head>
 
         

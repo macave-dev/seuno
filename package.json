@@ -34,6 +34,7 @@
     "dayjs": "^1.11.3",
     "frontity": "^1.17.2",
     "macave-package": "file:packages/macave-package",
+    "react-adsense": "^0.1.0",
     "react-router-dom": "^6.3.0",
     "react-share": "^4.4.0",
     "react-slick": "^0.29.0",

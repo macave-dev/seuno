@@ -17,12 +17,10 @@ export default [
           fills: {
             googleAdManager: {
               belowHeaderAd: {
-                slot: "Below-Header",
+                slot: "7589976484",
                 library: "googleAdManager.GooglePublisherTag",
-                priority: 5,
                 props: {
-                  id: "div-gpt-ad-1655843372707-0",
-                  unit: "/21802911858/Anuncios-Interno-SeUno-300x600",
+                  id: "ca-pub-1507048971343506",
                   size: [300, 600],
                 },
               },

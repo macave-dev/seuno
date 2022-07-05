@@ -1,5 +1,5 @@
 import React, {useState,useEffect, useRef } from 'react';
-import {connect,styled, decode} from 'frontity';
+import {connect,styled, decode, Slot} from 'frontity';
 import dayjs from "dayjs"
 import InterestedPosts from '../InterestedPosts';
 import RelatedPosts from '../RelatedPosts';
@@ -8,6 +8,10 @@ import SharePostBar from '../SharePostBar';
 import Author from '../Author';
 import { Head } from 'frontity';
 import Loading from '../Loading'
+
+
+import AdSense from 'react-adsense';
+
 
 
 
@@ -112,6 +116,8 @@ const Post = ({state, link, libraries,actions}) => {
           <meta data-rh="true" property="og:description" content={post.yoast_head_json.og_description}/>
           <title data-rh="true">{decode(post.title.rendered)}</title>
 
+
+          
          </Head>
          <SharePostBar props = {windowState} />
         
@@ -148,12 +154,17 @@ const Post = ({state, link, libraries,actions}) => {
               </LeftSide>
               <RightSide>
                 <Advertisement>
-                  {/* <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
-                  <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/> */}
+                <AdSense.Google
+                  client='ca-pub-1507048971343506'
+                  slot='7589976484'
+                  style={{ display: 'block' }}
+                  format='auto'
+                  responsive='true'
+                  layoutKey='-gw-1+2a-9x+5c'
+                />
                 </Advertisement>
                 <Advertisement>
-                  {/* <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
-                  <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/> */}
+                  <Slot/>
                 </Advertisement>
               </RightSide>
             </Content>

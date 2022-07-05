@@ -64,7 +64,7 @@ const Home = ({state,props}) => {
                 <Section8/>
                 <Section9/>
                 <Section10/>
-                {/* <Slot name = 'Below-Header' /> */}
+               
             </div>
         </>
        
