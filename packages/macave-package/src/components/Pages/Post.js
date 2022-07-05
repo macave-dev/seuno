@@ -10,8 +10,7 @@ import { Head } from 'frontity';
 import Loading from '../Loading'
 
 
-// import AdSense from 'react-adsense';
-
+import AdSense from 'react-adsense';
 
 
 
@@ -117,7 +116,8 @@ const Post = ({state, link, libraries,actions}) => {
           <title data-rh="true">{decode(post.title.rendered)}</title>
 
 
-    
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 
          </Head>
          <SharePostBar props = {windowState} />
@@ -143,6 +143,7 @@ const Post = ({state, link, libraries,actions}) => {
                   })}
                 </ContentInfo>
                 <InterestedPosts/>
+                <Slot name = '/21802911858/Anuncios-AdSense-SeUno-300x250' />
                 <ContentInfo>
                   {content_split_second_slice.map((post, key) => {
                     return (
@@ -155,14 +156,7 @@ const Post = ({state, link, libraries,actions}) => {
               </LeftSide>
               <RightSide>
                 <Advertisement>
-                {/* <AdSense.Google
-                  client='ca-pub-1507048971343506'
-                  slot='7589976484'
-                  style={{ display: 'block' }}
-                  format='auto'
-                  responsive='true'
-                  layoutKey='-gw-1+2a-9x+5c'
-                /> */}
+                  <Slot name = '/21802911858/Anuncios-AdSense-SeUno-300x600' />
                 </Advertisement>
                 <Advertisement>
                   <Slot/>

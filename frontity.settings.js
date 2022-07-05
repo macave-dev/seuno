@@ -16,11 +16,21 @@ export default [
         state: {
           fills: {
             googleAdManager: {
-              belowHeaderAd: {
-                slot: "7589976484",
+              inline: {
+                slot: "/21802911858/Anuncios-AdSense-SeUno-300x250",
                 library: "googleAdManager.GooglePublisherTag",
                 props: {
-                  id: "ca-pub-1507048971343506",
+                  id: "div-gpt-ad-1657053041491-0",
+                  unit: "/21802911858/Anuncios-AdSense-SeUno-300x250",
+                  size:  [300, 250],
+                },
+              },
+              sidebar: {
+                slot: "/21802911858/Anuncios-AdSense-SeUno-300x600",
+                library: "googleAdManager.GooglePublisherTag",
+                props: {
+                  id: "div-gpt-ad-1657053351037-0",
+                  unit: "/21802911858/Anuncios-AdSense-SeUno-300x600",
                   size: [300, 600],
                 },
               },
