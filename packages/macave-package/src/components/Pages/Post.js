@@ -117,7 +117,8 @@ const Post = ({state, link, libraries,actions}) => {
           <title data-rh="true">{decode(post.title.rendered)}</title>
 
 
-          
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
          </Head>
          <SharePostBar props = {windowState} />
         
