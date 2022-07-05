@@ -143,14 +143,6 @@ const Post = ({state, link, libraries,actions}) => {
                   })}
                 </ContentInfo>
                 <InterestedPosts/>
-                <AdSense.Google
-                  client='ca-pub-1507048971343506'
-                  slot='7589976484'
-                  style={{ display: 'block' }}
-                  format='auto'
-                  responsive='true'
-                  layoutKey='-gw-1+2a-9x+5c'
-                />
                 <ContentInfo>
                   {content_split_second_slice.map((post, key) => {
                     return (
