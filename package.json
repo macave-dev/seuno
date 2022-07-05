@@ -1,0 +1,43 @@
+{
+  "name": "rediseno-2023",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontity project",
+  "keywords": [
+    "frontity",
+    "sitemap"
+  ],
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "start": "frontity serve --port $PORT",
+    "dev": "frontity dev",
+    "build": "frontity build",
+    "serve": "frontity serve"
+  },
+  "prettier": {},
+  "dependencies": {
+    "@frontity/amp": "^0.1.1",
+    "@frontity/core": "^1.16.0",
+    "@frontity/google-ad-manager": "^1.0.0",
+    "@frontity/google-tag-manager-analytics": "^1.3.0",
+    "@frontity/head-tags": "^1.1.1",
+    "@frontity/html2react": "^1.7.0",
+    "@frontity/mars-theme": "./packages/mars-theme",
+    "@frontity/tiny-router": "^1.4.4",
+    "@frontity/wp-source": "^1.11.7",
+    "@frontity/yoast": "^2.1.1",
+    "axios": "^0.27.2",
+    "basic-sitemap-for-frontity": "^0.1.0",
+    "dayjs": "^1.11.3",
+    "frontity": "^1.17.2",
+    "macave-package": "file:packages/macave-package",
+    "react-router-dom": "^6.3.0",
+    "react-share": "^4.4.0",
+    "react-slick": "^0.29.0",
+    "sitemap": "^7.1.1",
+    "slick-carousel": "^1.8.1"
+  }
+}
