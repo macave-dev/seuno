@@ -24,12 +24,13 @@ const Root = ({state,actions}) => {
 
     const data = state.source.get(state.router.link);
  
-    const url = 'https://eventosyfestivales.com/wp-json/wp-macave/v1/schema';
+    const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/schema';
     const [information,setInformation] = useState()
     const fetchApi = async() => {
         const response = await fetch(url);
         const responseJSON = await response.json();
         setInformation(responseJSON);
+        
     }
 
     useEffect(() => {
@@ -76,7 +77,9 @@ const Root = ({state,actions}) => {
             }
             {!information ? '': <link data-rh="true" rel="shortcut icon" href={information.SiteIcon}/>}
             {!information ? '': <link data-rh="true" rel="icon" href={information.SiteIcon} type="image/x-icon"/>}
- 
+            
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1507048971343506"
+     crossorigin="anonymous"></script>
         </Head>
 
         

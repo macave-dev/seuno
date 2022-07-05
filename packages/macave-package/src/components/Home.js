@@ -26,7 +26,7 @@ const Home = ({state,props}) => {
 
     const [information,setInformation] = useState()
     const fetchApi = async() => {
-        const response = await fetch('https://eventosyfestivales.com/wp-json/wp-macave/v1/schema')
+        const response = await fetch('https://seunonoticias.net/wp-json/wp-macave/v1/schema')
         const responseJSON = await response.json()
         setInformation(responseJSON)
     }
