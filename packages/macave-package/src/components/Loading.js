@@ -23,7 +23,7 @@ const Loader = styled.div`
 `
 
 const Circle = styled.div`
-  background: deepskyblue;
+  background: #bc1d27;
   width: 20px;
   height: 20px;
   margin: 0 4px;
