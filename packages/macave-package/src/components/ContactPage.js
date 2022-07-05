@@ -5,7 +5,6 @@ import { connect, styled } from 'frontity';
 const ContactPage = ({ state,libraries }) => {
 
   const data = state.source.get(state.router.link)
-  console.log(data)
 
     const url = 'https://seunonoticias.net/wp-json/wp/v2/pages'
     const [information,setInformation] = useState()
@@ -26,8 +25,16 @@ const ContactPage = ({ state,libraries }) => {
     <Container>
         {!information ? '':
         <>
-            <h1>{information[1].title.rendered}</h1>
-            <Html2React html={information[1].content.rendered} />
+            {information.map(item => {
+              if(item.slug === 'contacto'){
+                return(
+                  <div>
+                    <h1>{item.title.rendered}</h1>
+                    <Html2React html={item.content.rendered} />
+                  </div>   
+                )
+              }
+            })}
         </>
         }
     </Container>

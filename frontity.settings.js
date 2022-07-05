@@ -4,9 +4,7 @@ export default [
     "name": "rediseno-2023",
     "state": {
       "frontity": {
-        "url": "https://test.frontity.org",
-        "title": "Test Frontity Blog",
-        "description": "WordPress installation for Frontity development"
+        "url": "https://seunonoticias.net/",
       }
     },
     

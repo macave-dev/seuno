@@ -14,7 +14,7 @@ const TermsAndCondtions = ({state,libraries}) => {
     }
 
     useEffect(() => {
-        fetchApi()
+        fetchApi();
     },[])
 
   const Html2React = libraries.html2react.Component
@@ -23,8 +23,16 @@ const TermsAndCondtions = ({state,libraries}) => {
     <Container>
         {!information ? '':
         <>
-            <h1>{information[2].title.rendered}</h1>
-            <Html2React html={information[2].content.rendered} />
+            {information.map(item => {
+              if(item.slug === 'terminos-y-condiciones-de-uso-aviso-de-privacidad'){
+                return(
+                  <div>
+                    <h1>{item.title.rendered}</h1>
+                    <Html2React html={item.content.rendered} />
+                  </div>   
+                )
+              }
+            })}
         </>
         }
     </Container>

@@ -34,11 +34,11 @@ const Footer = ({state}) => {
                         <DIRECCION className='direction-column'>
                             <h4>DIRECCIÓN</h4>
                             <p>{information.Direccion}</p>
-                            <Link link={`mailto:${information.Contacto}`} target="_blank">{information.Contacto}</Link>
+                            
                         </DIRECCION>
                         <CONTACTO className='contact-column'>
                             <h4>CONTACTO</h4>
-                            <Link link={"mailto:contacto@tolucaellacd.com"} target="_blank">contacto@tolucalabellacd.com</Link>
+                            <Link link={`mailto:${information.Contacto}`} target="_blank">{information.Contacto}</Link>
                         </CONTACTO>
                     </>
                 }
