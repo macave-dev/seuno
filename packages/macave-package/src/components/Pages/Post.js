@@ -1,5 +1,5 @@
 import React, {useState,useEffect, useRef } from 'react';
-import {connect,styled, decode, Slot} from 'frontity';
+import {connect,styled, decode} from 'frontity';
 import dayjs from "dayjs"
 import InterestedPosts from '../InterestedPosts';
 import RelatedPosts from '../RelatedPosts';
@@ -8,9 +8,6 @@ import SharePostBar from '../SharePostBar';
 import Author from '../Author';
 import { Head } from 'frontity';
 import Loading from '../Loading'
-
-
-import AdSense from 'react-adsense';
 
 
 
@@ -29,14 +26,12 @@ const Post = ({state, link, libraries,actions}) => {
    
     const formattedDate = dayjs(post.date).format("DD MMMM YYYY")
     const category_post = state.source.category[post.categories[0]]
-    const content = post.content.rendered;
-    const content_split = content.split('<p>')
-    const content_split_first_slice = content_split.slice(0,4)
-    const content_split_second_slice = content_split.slice(5)
+    const content = post.content.rendered.split('<p>Twitter</p>')
+
+
     const ref = useRef();
 
-
-    const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/schema';
+    const url = 'https://eventosyfestivales.com/wp-json/wp-macave/v1/schema';
     const [information,setInformation] = useState()
     const [windowState, setWindowState] = useState()
     const fetchApi = async() => {
@@ -115,10 +110,6 @@ const Post = ({state, link, libraries,actions}) => {
           <meta data-rh="true" property="og:description" content={post.yoast_head_json.og_description}/>
           <title data-rh="true">{decode(post.title.rendered)}</title>
 
-
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
          </Head>
          <SharePostBar props = {windowState} />
         
@@ -134,32 +125,38 @@ const Post = ({state, link, libraries,actions}) => {
                 <img src = {post.jetpack_featured_media_url}></img>
                 <Html2React  html={attachments.caption.rendered} className = 'wp-caption-text' />
                 <ContentInfo>
-                  {content_split_first_slice.map((post,key) => {
-                    return (
-                      <Paragraph key = {'p1'+key}>
-                        <Html2React key = {key} html={post} />
+                  
+                      <Paragraph >
+                        <Html2React html={content[0]} />
                       </Paragraph>
-                    )
-                  })}
+                  
                 </ContentInfo>
                 <InterestedPosts/>
-                <Slot name = '/21802911858/Anuncios-AdSense-SeUno-300x250' />
                 <ContentInfo>
-                  {content_split_second_slice.map((post, key) => {
+
+                      {/* {!content[0] ? null : 
+                         <Paragraph >
+                         <Html2React html={content[1]} />
+                       </Paragraph>
+                      } */}
+                     
+                  {/* {content_split_second_slice.map((post, key) => {
                     return (
                       <Paragraph key = {'p2'+key}>
                         <Html2React key = {key} html={post} />
                       </Paragraph>
                     )
-                  })}
+                  })} */}
                 </ContentInfo>
               </LeftSide>
               <RightSide>
                 <Advertisement>
-                  <Slot name = '/21802911858/Anuncios-AdSense-SeUno-300x600' />
+                  {/* <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
+                  <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/> */}
                 </Advertisement>
                 <Advertisement>
-                  <Slot/>
+                  {/* <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
+                  <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/> */}
                 </Advertisement>
               </RightSide>
             </Content>
