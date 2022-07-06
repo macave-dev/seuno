@@ -77,8 +77,8 @@ const RelatedPosts = ({state,actions, props}) => {
           ]
     };
     function SliderElement(props) {
-        let data = props.props,
-            localSettings = data.length > 2 ? settings : [],
+        let data = [props.props[0]],
+            localSettings = data.length > 2 ? settings : [{arrows:false}],
             localClass = data.length > 2 ? '' : 'no-slider';
         return(
             <Slider {...localSettings} className={localClass}>
@@ -165,7 +165,6 @@ const RelatedNotesSliderContent = styled.div`
         &:focus {
             outline: none;
         }
-
         &.dragging {
             cursor: pointer;
             cursor: hand;
@@ -186,17 +185,14 @@ const RelatedNotesSliderContent = styled.div`
         display: block;
         margin-left: auto;
         margin-right: auto;
-
         &:before,
         &:after {
             content: "";
             display: table;
         }
-
         &:after {
             clear: both;
         }
-
         .slick-loading & {
             visibility: hidden;
         }
@@ -214,21 +210,16 @@ const RelatedNotesSliderContent = styled.div`
         &.slick-loading img {
             display: none;
         }
-
         display: block;
-
         &.dragging img {
             pointer-events: none;
         }
-
         .slick-initialized & {
             display: block;
         }
-
         .slick-loading & {
             visibility: hidden;
         }
-
         .slick-vertical & {
             display: block;
             height: auto;
@@ -331,3 +322,4 @@ const CardContentInfo = styled.div`
         }
     }
 `
+Footer

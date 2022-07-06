@@ -1,39 +1,18 @@
-import React, {useState,useEffect, useRef } from 'react';
+import React, {useState,useEffect} from 'react';
 import {connect,styled, decode} from 'frontity';
 import dayjs from "dayjs"
 import InterestedPosts from '../InterestedPosts';
 import RelatedPosts from '../RelatedPosts';
 import RelatedTopics from '../RelatedTopics';
-import SharePostBar from '../SharePostBar';
 import Author from '../Author';
 import { Head } from 'frontity';
-import Loading from '../Loading'
 
 
+const Post = ({state, libraries,actions,link}) => {
 
-const Post = ({state, link, libraries,actions}) => {
-
-  const data = state.source.get(link)
-  const post = state.source[data.type][data.id]
-  const author = state.source.author[post.author]
-  
-  {data.isFetching && <Loading/>}
-
-  const attachments = state.source.attachment[post.featured_media]
-
-  
-  const Html2React = libraries.html2react.Component
-   
-    const formattedDate = dayjs(post.date).format("DD MMMM YYYY")
-    const category_post = state.source.category[post.categories[0]]
-    const content = post.content.rendered.split('<p>Twitter</p>')
-
-
-    const ref = useRef();
-
-    const url = 'https://eventosyfestivales.com/wp-json/wp-macave/v1/schema';
+  const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/schema';
     const [information,setInformation] = useState()
-    const [windowState, setWindowState] = useState()
+    const [windowWidth, getWindowWidth] = useState()
     const fetchApi = async() => {
         const response = await fetch(url);
         const responseJSON = await response.json();
@@ -41,17 +20,17 @@ const Post = ({state, link, libraries,actions}) => {
     }
 
     useEffect(() => {
-        fetchApi();
-        actions.source.fetch("/");
-        setWindowState( false )
+        fetchApi();      
     },[])
 
-    useEffect(() => {
-      if ( ref.current ) {
-        setWindowState( true )
-      }
-    })
+  const Html2React = libraries.html2react.Component
 
+  const data = state.source.get(link);
+  const post = state.source[data.type][data.id]
+  const category_post = state.source.category[post.categories[0]]
+  const content = post.content.rendered;
+  const content_split = content.split('<p>Twitter</p>')
+  
     return (
       <div>
          <Head>
@@ -111,43 +90,26 @@ const Post = ({state, link, libraries,actions}) => {
           <title data-rh="true">{decode(post.title.rendered)}</title>
 
          </Head>
-         <SharePostBar props = {windowState} />
         
-        <Container data-id="post-container" ref={ref}>
+        
+          <Container>
             <Title>{decode(post.title.rendered)}</Title>
             
             <DateWrapper>
-              <strong>{formattedDate} - {category_post.name}</strong>
-              <strong>Autor: {author.name} </strong><br/>
+              <strong>{dayjs(post.date).format("DD MMMM YYYY")} - {category_post.name}</strong>
+              <strong>Autor: {state.source.author[post.author].name} </strong><br/>
             </DateWrapper>
             <Content>
               <LeftSide>
                 <img src = {post.jetpack_featured_media_url}></img>
-                <Html2React  html={attachments.caption.rendered} className = 'wp-caption-text' />
-                <ContentInfo>
-                  
-                      <Paragraph >
-                        <Html2React html={content[0]} />
-                      </Paragraph>
-                  
-                </ContentInfo>
+                <Html2React html={state.source.attachment[post.featured_media].caption.rendered} />
+                  <ContentInfo>
+                    <Html2React html={content_split[0]} />
+                  </ContentInfo>
                 <InterestedPosts/>
-                <ContentInfo>
-
-                      {/* {!content[0] ? null : 
-                         <Paragraph >
-                         <Html2React html={content[1]} />
-                       </Paragraph>
-                      } */}
-                     
-                  {/* {content_split_second_slice.map((post, key) => {
-                    return (
-                      <Paragraph key = {'p2'+key}>
-                        <Html2React key = {key} html={post} />
-                      </Paragraph>
-                    )
-                  })} */}
-                </ContentInfo>
+                  <ContentInfo>
+                    <Html2React html={content_split[0]} />
+                  </ContentInfo>
               </LeftSide>
               <RightSide>
                 <Advertisement>
@@ -165,7 +127,7 @@ const Post = ({state, link, libraries,actions}) => {
               <LeftSide>
                 {post.tags && <RelatedTopics tags = {post.tags}/> }
                 
-                <Author props = {author}/>
+                <Author props = {state.source.author[post.author]}/>
               </LeftSide>
               <RightSide>
                 <Advertisement>
@@ -216,7 +178,6 @@ const DateWrapper = styled.p`
 `;
 const Content = styled.div`
   
-
   display: grid;
   grid-template-columns: calc( 60% - 18px) calc(40% - 18px);
   grid-gap: 36px;
@@ -277,8 +238,6 @@ const Content = styled.div`
     margin-bottom: 0px;
     padding-top: 0px;
   }
-
-
 `;
 
 const ContentInfo = styled.div`
