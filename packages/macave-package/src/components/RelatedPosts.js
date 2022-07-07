@@ -30,13 +30,10 @@ function NextArrow(props) {
 
 const RelatedPosts = ({state,actions, props}) => {
     const data = state.source.get(state.router.link);
-    const category_link = props.link
-    const category = props.id
-    const allPosts = Object.values(state.source.post)
-    const filteredPosts = allPosts.filter( (post) => 
-        post.categories == category
-    )
-    const posts_to_use = filteredPosts.slice(-5)
+
+    const posts_to_use = Object.values(state.source.post).filter( (post) => 
+        post.categories == props.id
+    ).slice(-5)
     
     const settings = {
         className: "center",
@@ -80,6 +77,7 @@ const RelatedPosts = ({state,actions, props}) => {
         let data = [props.props[0]],
             localSettings = data.length > 2 ? settings : [{arrows:false}],
             localClass = data.length > 2 ? '' : 'no-slider';
+
         return(
             <Slider {...localSettings} className={localClass}>
                 {data.map((post,id) => {
@@ -112,6 +110,8 @@ const RelatedPosts = ({state,actions, props}) => {
             </Slider>
         )
     }
+
+    
     return (
         <RelatedNotesContainer>
             <h3>NOTAS RELACIONADAS</h3>
@@ -322,4 +322,4 @@ const CardContentInfo = styled.div`
         }
     }
 `
-Footer
+

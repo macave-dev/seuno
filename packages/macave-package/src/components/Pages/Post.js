@@ -1,8 +1,8 @@
 import React, {useState,useEffect} from 'react';
-import {connect,styled, decode} from 'frontity';
+import {connect,styled, decode,Slot} from 'frontity';
 import dayjs from "dayjs"
 import InterestedPosts from '../InterestedPosts';
-// import RelatedPosts from '../RelatedPosts';
+import RelatedPosts from '../RelatedPosts';
 import RelatedTopics from '../RelatedTopics';
 import Author from '../Author';
 import { Head } from 'frontity';
@@ -110,9 +110,11 @@ const Post = ({state, libraries,actions,link}) => {
                     <Html2React html={content} />
                   </ContentInfo>
                   <InterestedPosts/>
+                  <Slot name = '/21802911858/Anuncios-AdSense-SeUno-300x250' />
               </LeftSide>
               <RightSide>
                 <Advertisement>
+                  <Slot name = {'/21802911858/Anuncios-AdSense-SeUno-300x600'} />
                   {/* <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
                   <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/> */}
                 </Advertisement>
@@ -122,6 +124,7 @@ const Post = ({state, libraries,actions,link}) => {
                 </Advertisement>
               </RightSide>
               </Content>
+              <RelatedPosts props = {category_post}/>
               <Content>
                 <LeftSide>
                   {post.tags && <RelatedTopics tags = {post.tags}/> }
