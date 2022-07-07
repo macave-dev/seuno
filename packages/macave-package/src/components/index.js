@@ -5,7 +5,7 @@ import Header from './Header/Header'
 import Home from './Home'
 import Footer from './Footer/Footer';
 
-
+import Post from './Pages/Post';
 import PostList from './Pages/Post-list'
 import ListPage from './list/ListPage';
 import Loading from './Loading';

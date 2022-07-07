@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react';
 import {connect,styled, decode} from 'frontity';
 import dayjs from "dayjs"
 import InterestedPosts from '../InterestedPosts';
-import RelatedPosts from '../RelatedPosts';
+// import RelatedPosts from '../RelatedPosts';
 import RelatedTopics from '../RelatedTopics';
 import Author from '../Author';
 import { Head } from 'frontity';
@@ -11,17 +11,17 @@ import { Head } from 'frontity';
 const Post = ({state, libraries,actions,link}) => {
 
   const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/schema';
-    const [information,setInformation] = useState()
-    const [windowWidth, getWindowWidth] = useState()
-    const fetchApi = async() => {
-        const response = await fetch(url);
-        const responseJSON = await response.json();
-        setInformation(responseJSON);
-    }
+  const [information,setInformation] = useState()
+  const [windowWidth, getWindowWidth] = useState()
+  const fetchApi = async() => {
+      const response = await fetch(url);
+      const responseJSON = await response.json();
+      setInformation(responseJSON);
+  }
 
-    useEffect(() => {
-        fetchApi();      
-    },[])
+  useEffect(() => {
+      fetchApi();      
+  },[])
 
   const Html2React = libraries.html2react.Component
 
@@ -30,9 +30,12 @@ const Post = ({state, libraries,actions,link}) => {
   const category_post = state.source.category[post.categories[0]]
   const content = post.content.rendered;
   const content_split = content.split('<p>Twitter</p>')
+
+
   
     return (
       <div>
+         
          <Head>
          
           {!information ? '':
@@ -90,26 +93,23 @@ const Post = ({state, libraries,actions,link}) => {
           <title data-rh="true">{decode(post.title.rendered)}</title>
 
          </Head>
-        
-        
-          <Container>
-            <Title>{decode(post.title.rendered)}</Title>
-            
-            <DateWrapper>
+
+         <Container>
+          <Title>{decode(post.title.rendered)}</Title>
+
+          <DateWrapper>
               <strong>{dayjs(post.date).format("DD MMMM YYYY")} - {category_post.name}</strong>
               <strong>Autor: {state.source.author[post.author].name} </strong><br/>
             </DateWrapper>
+            
             <Content>
               <LeftSide>
                 <img src = {post.jetpack_featured_media_url}></img>
                 <Html2React html={state.source.attachment[post.featured_media].caption.rendered} />
-                  <ContentInfo>
-                    <Html2React html={content_split[0]} />
+                <ContentInfo>
+                    <Html2React html={content} />
                   </ContentInfo>
-                <InterestedPosts/>
-                  <ContentInfo>
-                    <Html2React html={content_split[0]} />
-                  </ContentInfo>
+                  <InterestedPosts/>
               </LeftSide>
               <RightSide>
                 <Advertisement>
@@ -121,22 +121,21 @@ const Post = ({state, libraries,actions,link}) => {
                   <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/> */}
                 </Advertisement>
               </RightSide>
-            </Content>
-            <RelatedPosts props = {category_post}/>
-            <Content>
-              <LeftSide>
-                {post.tags && <RelatedTopics tags = {post.tags}/> }
-                
-                <Author props = {state.source.author[post.author]}/>
-              </LeftSide>
-              <RightSide>
+              </Content>
+              <Content>
+                <LeftSide>
+                  {post.tags && <RelatedTopics tags = {post.tags}/> }
+                  <Author props = {state.source.author[post.author]}/>
+                </LeftSide>
+                <RightSide>
                 <Advertisement>
                   {/* <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
                   <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/> */}
                 </Advertisement>
               </RightSide>
-            </Content>
-        </Container>
+              </Content>
+            
+         </Container>
       </div>
     )
     
