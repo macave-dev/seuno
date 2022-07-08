@@ -92,6 +92,8 @@ const Post = ({state, libraries,actions,link}) => {
           <meta data-rh="true" property="og:description" content={post.yoast_head_json.og_description}/>
           <title data-rh="true">{decode(post.title.rendered)}</title>
 
+
+            
          </Head>
 
          <Container>
@@ -115,12 +117,9 @@ const Post = ({state, libraries,actions,link}) => {
               <RightSide>
                 <Advertisement>
                   <Slot name = {'/21802911858/Anuncios-AdSense-SeUno-300x600'} />
-                  {/* <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
-                  <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/> */}
                 </Advertisement>
                 <Advertisement>
-                  {/* <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/>
-                  <img src="https://via.placeholder.com/330X282.png?text=Publicidad"/> */}
+                  
                 </Advertisement>
               </RightSide>
               </Content>

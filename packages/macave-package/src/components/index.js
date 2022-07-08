@@ -68,7 +68,7 @@ const Root = ({state,actions}) => {
                   "@context": "http://schema.org/",
                   "@type": "NewsMediaOrganization",
                   "name" : "${information.Name}",
-                  "logo": ${information.Logo}",
+                  "logo": "${information.Logo}",
                   "description" : "${information.Description}",
                   "actionableFeedbackPolicy": "${information.Policy}",
                   "foundingDate": "",

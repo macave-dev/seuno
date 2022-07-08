@@ -13,7 +13,7 @@ const PostList = ({propsApi_Schema}) => {
             {posts.map( ({key, link, isLast, Wrapper}) => {
                 return (
                     <Wrapper key = {key}>
-                        <Post link = {link} props = {propsApi_Schema} />
+                        <Post link = {link} />
                         {isLast && <hr/>}
                     </Wrapper>
                 )
