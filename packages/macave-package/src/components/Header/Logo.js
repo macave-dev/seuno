@@ -24,7 +24,7 @@ const Logo = ({state}) => {
 
 
     return (
-        <LogoContent>
+        <LogoContent id = 'logo'>
             {!information ? '':
                 <Link link='/'>
                     <Switch>

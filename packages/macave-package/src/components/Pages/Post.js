@@ -32,7 +32,6 @@ const Post = ({state, libraries,actions,link}) => {
   const content_split = content.split('<p>Twitter</p>')
 
 
-  console.log(data)
   
     return (
       <div>

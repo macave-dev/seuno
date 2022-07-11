@@ -17,6 +17,7 @@ import PrivacyPage from './PrivacyPage';
 import ContactPage from './ContactPage'
 import TermsAndConditions from './TermsAndConditions'
 import IntroducePage from './IntroducePage'
+import SharePostBar from './SharePostBar';
 
 import Switch from "@frontity/components/switch"
 
@@ -98,6 +99,7 @@ const Root = ({state,actions}) => {
         <Main>
           
           <Switch>
+            <SharePostBar when = {data.isPost}/>
             <PrivacyPage when = {data.link == "/politica-de-privacidad/"}/>
             <ContactPage when = {data.link == '/contacto/'} />
             <TermsAndConditions  when = {data.link == '/terminos-y-condiciones-de-uso-aviso-de-privacidad/'}/> 
