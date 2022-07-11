@@ -32,13 +32,22 @@ export default [
                   size: [300, 600],
                 },
               },
-              sidebar2: {
-                slot: "/21802911858/Anuncios-AdSense-SeUno-Flexible",
+              home1: {
+                slot: "/21802911858/Anuncios-AdSense-SeUno-300x600-Bloque8",
                 library: "googleAdManager.GooglePublisherTag",
                 props: {
-                  id: "div-gpt-ad-1657054524427-0",
-                  unit: "/21802911858/Anuncios-AdSense-SeUno-Flexible",
-                  size: ['fluid'],
+                  id: "div-gpt-ad-1657314178563-0",
+                  unit: "/21802911858/Anuncios-AdSense-SeUno-300x600-Bloque8",
+                  size: [300, 600],
+                },
+              },
+              home2: {
+                slot: "/21802911858/Anuncios-AdSense-SeUno-300x250-Bloque10",
+                library: "googleAdManager.GooglePublisherTag",
+                props: {
+                  id: "div-gpt-ad-1657314751748-0",
+                  unit: "/21802911858/Anuncios-AdSense-SeUno-300x250-Bloque10",
+                  size: [300, 250],
                 },
               },
             },

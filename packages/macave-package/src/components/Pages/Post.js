@@ -32,6 +32,7 @@ const Post = ({state, libraries,actions,link}) => {
   const content_split = content.split('<p>Twitter</p>')
 
 
+  console.log(data)
   
     return (
       <div>
@@ -92,7 +93,7 @@ const Post = ({state, libraries,actions,link}) => {
           <meta data-rh="true" property="og:description" content={post.yoast_head_json.og_description}/>
           <title data-rh="true">{decode(post.title.rendered)}</title>
 
-
+          
             
          </Head>
 
