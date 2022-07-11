@@ -20,7 +20,7 @@ import IntroducePage from './IntroducePage'
 import SharePostBar from './SharePostBar';
 
 import Switch from "@frontity/components/switch"
-
+import 'bootstrap/dist/css/bootstrap.css'
 
 const Root = ({state,actions}) => {
 

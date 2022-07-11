@@ -13,6 +13,7 @@ import Section9 from './HomeSections/Section9'
 import Section10 from './HomeSections/Section10'
 import YoutubeVideo from './YoutubeVideo'
 import Loading from './Loading'
+import FormFeedBack from './HomeSections/FormFeedBack';
 
 import Axios from 'axios';
 
@@ -64,6 +65,7 @@ const Home = ({state,props}) => {
                 <Section8/>
                 <Section9/>
                 <Section10/>
+                <FormFeedBack />
                
             </div>
         </>

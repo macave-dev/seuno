@@ -28,7 +28,7 @@ const Logo = ({state}) => {
             {!information ? '':
                 <Link link='/'>
                     <Switch>
-                        <h1 className='hide-title' when = {data.isHome}>Eventos y festivales</h1>    
+                        <h1 className='hide-title' when = {data.isHome}>{information.Name}</h1>    
                     </Switch>
                     
                     <img src = {information.Logo} />

@@ -30,6 +30,7 @@
     "@frontity/yoast": "^2.1.1",
     "axios": "^0.27.2",
     "basic-sitemap-for-frontity": "^0.1.0",
+    "bootstrap": "^5.1.3",
     "dayjs": "^1.11.3",
     "frontity": "^1.17.2",
     "macave-package": "file:packages/macave-package",
