@@ -69,7 +69,7 @@ const Root = ({state,actions}) => {
                   "@context": "http://schema.org/",
                   "@type": "NewsMediaOrganization",
                   "name" : "${information.Name}",
-                  'url" : "${information.URL}",
+                  "url" : "${information.URL}",
                   "logo": "${information.Logo}",
                   "description" : "${information.Description}",
                   "actionableFeedbackPolicy": "${information.Policy}",
