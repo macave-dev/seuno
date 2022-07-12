@@ -4,6 +4,7 @@ import Link from '@frontity/components/link'
 import HeaderSection from '../HeaderSection';
 import GoToIcon from '../svgIcons/goToIcon';
 import Loading from '../Loading';
+import Image from "@frontity/components/image";
 
 
 const Section1 = ({state,styled,propsAPI,actions}) => {
@@ -26,16 +27,16 @@ const Section1 = ({state,styled,propsAPI,actions}) => {
 
     useEffect(() => {
         if ( information && !hasDataLoaded ) {
-            setInitialCard();
+            setInitialCard(); 
             return () => {
-                document.querySelector('.card__description').removeEventListener('click', () => goToPost);
+                document.querySelector('.link-button-element').removeEventListener('click', () => goToPost);
             }
         };
     })
-    const goToPost = (e) => {
+    const goToPost = (e) => { 
         if ( ref.current ) {
-            
-            let urlToGo = ref.current.getAttribute('data-url');
+            let cardElement = e.target.closest('.card__description'),
+                urlToGo = cardElement.querySelector('.button__general--go-to').getAttribute('data-url');
             actions.theme.linkToPost(urlToGo);
         }
     }
@@ -147,11 +148,11 @@ const Section1 = ({state,styled,propsAPI,actions}) => {
                                     <div className='card__background' style={{backgroundImage: `url(${element.image})`}}></div>
                                     <div className='card__opacity'></div>
                                     <div className='card__description' data-id={'card-'+element.id}>
-                                        <h2 onClick={ goToPost }>
+                                        <h2 className='link-button-element' onClick={ goToPost }>
                                             {element.title}
                                         </h2>
-                                        <p onClick={ goToPost }>{element.metadescription[0]}</p>
-                                        <div className='button__general--go-to' ref={ref} onClick={ goToPost } data-url={element.url}>
+                                        <p className='link-button-element' onClick={ goToPost }>{element.metadescription[0]}</p>
+                                        <div className='button__general--go-to link-button-element' ref={ref} onClick={ goToPost } data-url={element.url}>
                                             <GoToIcon></GoToIcon>
                                             <span>Ver más</span>
                                         </div>
