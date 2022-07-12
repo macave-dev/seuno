@@ -65,7 +65,7 @@ const Home = ({state,props}) => {
                 <Section8/>
                 <Section9/>
                 <Section10/>
-                <FormFeedBack />
+                {/* <FormFeedBack /> */}
                
             </div>
         </>
