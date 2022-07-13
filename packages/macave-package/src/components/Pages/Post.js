@@ -31,8 +31,6 @@ const Post = ({state, libraries,actions,link}) => {
   const content = post.content.rendered;
   const content_split = content.split('<p>Twitter</p>')
 
-  console.log(state.source.attachment[post.featured_media].alt_text)
-  
     return (
       <div>
          

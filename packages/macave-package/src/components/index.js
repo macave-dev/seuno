@@ -86,11 +86,10 @@ const Root = ({state,actions}) => {
             
 
       {/* ADSENSE */}
-      <script async src="https:/ pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1507048971343506" crossorigin="anonymous"></script>
-
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1507048971343506" crossorigin="anonymous"></script>
         {/* OPTAD */}
-        <script async src="/ cmp.optad360.io/items/efcbca1a-ff07-4c07-8ab7-4b8f22babc58.min.js"></script>
-        <script async src="/ get.optad360.io/sf/2a85e80b-6283-412a-9072-fb28e85f51ee/plugin.min.js"></script>
+        <script async src="//cmp.optad360.io/items/efcbca1a-ff07-4c07-8ab7-4b8f22babc58.min.js"></script>
+        <script async src="//get.optad360.io/sf/2a85e80b-6283-412a-9072-fb28e85f51ee/plugin.min.js"></script>
 
         
 
