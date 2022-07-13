@@ -12,7 +12,7 @@ const Author = ({state, props}) => {
             <h2>SOBRE EL AUTOR</h2>
             <AuthorImage>
                 <Link link = {author.link}>
-                    <img src = {author_image[2]}></img>
+                    <img src = {author_image[2]} alt = {author.name}></img>
                 </Link>
                 
             </AuthorImage>

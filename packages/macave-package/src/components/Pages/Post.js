@@ -31,7 +31,7 @@ const Post = ({state, libraries,actions,link}) => {
   const content = post.content.rendered;
   const content_split = content.split('<p>Twitter</p>')
 
-
+  console.log(state.source.attachment[post.featured_media].alt_text)
   
     return (
       <div>
@@ -106,7 +106,7 @@ const Post = ({state, libraries,actions,link}) => {
             
             <Content>
               <LeftSide>
-                <img src = {post.jetpack_featured_media_url}></img>
+                <img src = {post.jetpack_featured_media_url} alt = {state.source.attachment[post.featured_media].alt_text}></img>
                 <Html2React html={state.source.attachment[post.featured_media].caption.rendered} />
                 <ContentInfo>
                     <Html2React html={content} />

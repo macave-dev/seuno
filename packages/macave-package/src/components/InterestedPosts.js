@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { connect,styled, csss } from 'frontity';
+import { connect,styled, csss, decode } from 'frontity';
 import dayjs from 'dayjs';
 import Link from '@frontity/components/link';
 import Slider from "react-slick";
@@ -29,7 +29,6 @@ const InterestedPosts = ({state, actions}) => {
     const data = state.source.get(state.router.link)
     const post = state.source[data.type][data.id];
     const interested_post = post['jetpack-related-posts']
-
 
     const settings = {
         className: "center",
@@ -83,7 +82,7 @@ const InterestedPosts = ({state, actions}) => {
                                     <div className='card__background--wrap'>
                                         <div className='card__background' style={{backgroundImage: `url(${element.img.src})`}}></div>
                                     </div>
-                                    <p>{shortDescription}</p> 
+                                    <p>{decode(element.title)}</p> 
                                 </CardContent>
                             </Link>
                         )

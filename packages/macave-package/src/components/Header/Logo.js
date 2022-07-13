@@ -22,7 +22,6 @@ const Logo = ({state}) => {
     },[])
 
 
-
     return (
         <LogoContent id = 'logo'>
             {!information ? '':
@@ -31,7 +30,7 @@ const Logo = ({state}) => {
                         <h1 className='hide-title' when = {data.isHome}>{information.Name}</h1>    
                     </Switch>
                     
-                    <img src = {information.Logo} />
+                    <img alt = 'logo' src = {information.Logo} />
                 </Link>
             }
            
