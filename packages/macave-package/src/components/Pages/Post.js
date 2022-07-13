@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect,useRef} from 'react';
 import {connect,styled, decode,Slot} from 'frontity';
 import dayjs from "dayjs"
 import InterestedPosts from '../InterestedPosts';
@@ -6,13 +6,15 @@ import RelatedPosts from '../RelatedPosts';
 import RelatedTopics from '../RelatedTopics';
 import Author from '../Author';
 import { Head } from 'frontity';
+import SharePostBar from '../SharePostBar';
 
 
 const Post = ({state, libraries,actions,link}) => {
 
+  const ref = useRef();
   const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/schema';
   const [information,setInformation] = useState()
-  const [windowWidth, getWindowWidth] = useState()
+  const [windowState, setWindowState] = useState()
   const fetchApi = async() => {
       const response = await fetch(url);
       const responseJSON = await response.json();
@@ -21,7 +23,16 @@ const Post = ({state, libraries,actions,link}) => {
 
   useEffect(() => {
       fetchApi();      
+      setWindowState( false )
   },[])
+
+
+  
+  useEffect(() => {
+    if ( ref.current ) {
+      setWindowState( true )
+    }
+  })
 
   const Html2React = libraries.html2react.Component
 
@@ -94,7 +105,8 @@ const Post = ({state, libraries,actions,link}) => {
             
          </Head>
 
-         <Container>
+         <SharePostBar props = {windowState} />
+         <Container data-id="post-container" ref={ref}>
           <Title>{decode(post.title.rendered)}</Title>
 
           <DateWrapper>

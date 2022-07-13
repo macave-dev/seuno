@@ -101,7 +101,6 @@ const Root = ({state,actions}) => {
         <Main>
           
           <Switch>
-            <SharePostBar when = {data.isPost}/>
             <PrivacyPage when = {data.link == "/politica-de-privacidad/"}/>
             <ContactPage when = {data.link == '/contacto/'} />
             <TermsAndConditions  when = {data.link == '/terminos-y-condiciones-de-uso-aviso-de-privacidad/'}/> 
