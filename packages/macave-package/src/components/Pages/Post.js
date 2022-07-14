@@ -12,6 +12,7 @@ import SharePostBar from '../SharePostBar';
 const Post = ({state, libraries,actions,link}) => {
 
   const ref = useRef();
+ 
   const url = 'https://seunonoticias.net/wp-json/wp-macave/v1/schema';
   const [information,setInformation] = useState()
   const [windowState, setWindowState] = useState()
@@ -34,6 +35,38 @@ const Post = ({state, libraries,actions,link}) => {
     }
   })
 
+
+  const [counter,setCounter] = useState(0)
+  const increaseCounter = () => {
+    setCounter( counter + 1 )
+  }
+
+  const slideAds = [
+    '/21802911858/Anuncios-AdSense-SeUno-300x600-Interna',
+    '/21802911858/Anuncios-AdSense-SeUno-300x600-Interna-2',
+    '/21802911858/Anuncios-AdSense-SeUno-300x600-Interna-3',
+    '/21802911858/Anuncios-AdSense-SeUno-300x600-Interna-4',
+    '/21802911858/Anuncios-AdSense-SeUno-300x600-Interna-5',
+  ]
+
+  const finalPageRef = useRef()
+  useEffect(() => {
+    const handleScroll = () => {
+      const div = finalPageRef.current;
+      const {y} = div.getBoundingClientRect();
+      if(y> 0 && y < 6){
+        increaseCounter();
+      }
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () =>{
+      window.removeEventListener('scroll', handleScroll);
+    }
+  },[counter,setCounter])
+
+
+
+
   const Html2React = libraries.html2react.Component
 
   const data = state.source.get(link);
@@ -43,7 +76,7 @@ const Post = ({state, libraries,actions,link}) => {
   const content_split = content.split('<p>Twitter</p>')
 
     return (
-      <div>
+      <div ref = {finalPageRef} >
          
          <Head>
          
@@ -105,9 +138,9 @@ const Post = ({state, libraries,actions,link}) => {
             
          </Head>
 
-         <SharePostBar props = {windowState} />
+         <SharePostBar props = {windowState}  />
          <Container data-id="post-container" ref={ref}>
-          <Title>{decode(post.title.rendered)}</Title>
+          <Title >{decode(post.title.rendered)}</Title>
 
           <DateWrapper>
               <strong>{dayjs(post.date).format("DD MMMM YYYY")} - {category_post.name}</strong>
@@ -126,7 +159,7 @@ const Post = ({state, libraries,actions,link}) => {
               </LeftSide>
               <RightSide>
                 <Advertisement>
-                  <Slot name = {'/21802911858/Anuncios-AdSense-SeUno-300x600'} />
+                  <Slot name = {slideAds[counter]} />
                 </Advertisement>
                 <Advertisement>
                   

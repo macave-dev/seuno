@@ -14,21 +14,48 @@ export default [
         state: {
           fills: {
             googleAdManager: {
-              inline: {
-                slot: "/21802911858/Anuncios-AdSense-SeUno-300x250",
+              slidebar1: {
+                slot: "/21802911858/Anuncios-AdSense-SeUno-300x600-Interna",
                 library: "googleAdManager.GooglePublisherTag",
                 props: {
-                  id: "div-gpt-ad-1657053041491-0",
-                  unit: "/21802911858/Anuncios-AdSense-SeUno-300x250",
-                  size:  [300, 250],
+                  id: "div-gpt-ad-1657314904838-0",
+                  unit: "/21802911858/Anuncios-AdSense-SeUno-300x600-Interna",
+                  size: [300, 600],
                 },
               },
-              sidebar: {
-                slot: "/21802911858/Anuncios-AdSense-SeUno-300x600",
+              slidebar2: {
+                slot: "/21802911858/Anuncios-AdSense-SeUno-300x600-Interna-2",
                 library: "googleAdManager.GooglePublisherTag",
                 props: {
-                  id: "div-gpt-ad-1657053351037-0",
-                  unit: "/21802911858/Anuncios-AdSense-SeUno-300x600",
+                  id: "div-gpt-ad-1657315214599-0",
+                  unit: "/21802911858/Anuncios-AdSense-SeUno-300x600-Interna-2",
+                  size: [300, 600],
+                },
+              },
+              slidebar3: {
+                slot: "/21802911858/Anuncios-AdSense-SeUno-300x600-Interna-3",
+                library: "googleAdManager.GooglePublisherTag",
+                props: {
+                  id: "div-gpt-ad-1657315284772-0",
+                  unit: "/21802911858/Anuncios-AdSense-SeUno-300x600-Interna-3",
+                  size: [300, 600],
+                },
+              },
+              slidebar4: {
+                slot: "/21802911858/Anuncios-AdSense-SeUno-300x600-Interna-4",
+                library: "googleAdManager.GooglePublisherTag",
+                props: {
+                  id: "div-gpt-ad-1657315344031-0",
+                  unit: "/21802911858/Anuncios-AdSense-SeUno-300x600-Interna-4",
+                  size: [300, 600],
+                },
+              },
+              slidebar5: {
+                slot: "/21802911858/Anuncios-AdSense-SeUno-300x600-Interna-5",
+                library: "googleAdManager.GooglePublisherTag",
+                props: {
+                  id: "div-gpt-ad-1657315403132-0",
+                  unit: "/21802911858/Anuncios-AdSense-SeUno-300x600-Bloque8",
                   size: [300, 600],
                 },
               },
